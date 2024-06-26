@@ -26,6 +26,16 @@ export default function useCustomNavigation(prev: string, next: string): void {
       router.push(prev);
     }
   }
+  function onScroll(e: any) {
+    console.log(e);
+    if (isEndReached()) {
+      console.log("next");
+      router.push(next);
+    }
+    if (isTopReached()) {
+      router.push(prev);
+    }
+  }
   function onKeyPress(e: any) {
     console.log(e);
     const { key } = e;
@@ -40,9 +50,11 @@ export default function useCustomNavigation(prev: string, next: string): void {
   useEffect(() => {
     window.addEventListener("wheel", onWheel);
     window.addEventListener("keydown", onKeyPress);
+    window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("keydown", onKeyPress);
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 }

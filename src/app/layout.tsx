@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <div className="min-h-screen bg-[#F3F4F6] py-12 px-12 lg:px-16">
+        <div className="min-h-screen w-screen bg-[#F3F4F6] py-12 px-12 lg:px-16">
           {children}
         </div>
       </body>

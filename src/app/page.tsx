@@ -20,7 +20,7 @@ export default function HomePage() {
   //   contactsAnimation.start({ opacity: 1 }, { duration: 2 });
   // }, []);
   return (
-    <main className="flex flex-col mx-auto lg:w-full items-center">
+    <main className="flex flex-col mx-auto items-center">
       <div className="sm:flex hidden flex-row justify-end items-end px-4 py-2 w-full">
         <a
           href="https://drive.google.com/file/d/1LQBZ00JBvC6saq2kp-_NDhiPj0OFf_YK/view?usp=sharing"
@@ -33,7 +33,7 @@ export default function HomePage() {
       <motion.div animate={imageAnimation}>
         <Image
           src="/firas.jpeg"
-          className="size-[220px] mt-4 mb-4 border border-transparent rounded-full"
+          className="xl:size-[220px] lg:size-[100px] mt-4 mb-4 border border-transparent rounded-full"
           alt="firas photo"
           height={200}
           width={200}
