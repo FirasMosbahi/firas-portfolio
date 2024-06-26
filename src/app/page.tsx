@@ -1,113 +1,73 @@
+"use client";
+
 import Image from "next/image";
+import useCustomNavigation from "@portfolio/hooks/useCustomNavigation";
+import useHomePageAnimation from "@portfolio/animations/useHomePageAnimation";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
-export default function Home() {
+export default function HomePage() {
+  useCustomNavigation("/", "/education");
+  const imageAnimation = useAnimation();
+  const infosAnimation = useAnimation();
+  const contactsAnimation = useAnimation();
+  // useEffect(() => {
+  //   imageAnimation.set({ opacity: 0 });
+  //   infosAnimation.set({ x: -200 });
+  //   contactsAnimation.set({ opacity: 0 });
+  //   imageAnimation.start({ opacity: 1 }, { duration: 2 });
+  //   infosAnimation.start({ x: 0 }, { duration: 2 });
+  //   contactsAnimation.start({ opacity: 1 }, { duration: 2 });
+  // }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main className="flex flex-col mx-auto lg:w-full items-center">
+      <div className="sm:flex hidden flex-row justify-end items-end px-4 py-2 w-full">
+        <a
+          href="https://drive.google.com/file/d/1LQBZ00JBvC6saq2kp-_NDhiPj0OFf_YK/view?usp=sharing"
+          target="_blank"
+          className="text-black bg-white text-[16px] font-[500] px-16 py-4 border border-transparent rounded-[8px]"
+        >
+          Get my CV
+        </a>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+      <motion.div animate={imageAnimation}>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/firas.jpeg"
+          className="size-[220px] mt-4 mb-10 border border-transparent rounded-full"
+          alt="firas photo"
+          height={200}
+          width={200}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+      </motion.div>
+      <motion.div animate={infosAnimation} className="text-center">
+        <p className="text-[#4B5563] text-[32px] font-[700] mb-12">
+          Mosbahi Firas
+        </p>
+        <p className="text-[#111827] lg:text-[64px] sm:text-[36px] text-[24px] lg:mb-0 mb-8 font-[500]">
+          Software engineering student
+        </p>
+        <p className="text-[#111827] text-[16px] sm:text-[18px] text-center">
+          Highly motivated Software Engineering student with a passion for
+          building innovative web applications. Deeply interested in exploring
+          the potential of blockchain technology and DevOps methodologies to
+          enhance software development processes.
+        </p>
+      </motion.div>
+      <motion.div
+        animate={contactsAnimation}
+        className="text-[#4B5563] sm:text-[18px] text-[12px] flex flex-col items-center mt-4 w-[1200px]"
+      >
+        <p>Email: firas.mosbehi@insat.ucar.tn</p>
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          href="https://www.linkedin.com/in/firas-mosbahi-6363b420a/"
           target="_blank"
-          rel="noopener noreferrer"
         >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
+          Linkedin: https://www.linkedin.com/in/firas-mosbahi-6363b420a/
         </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
+        <a href="https://github.com/FirasMosbahi" target="_blank">
+          Github: https://github.com/FirasMosbahi
         </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </motion.div>
     </main>
   );
 }
