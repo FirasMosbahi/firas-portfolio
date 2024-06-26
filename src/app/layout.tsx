@@ -15,15 +15,18 @@ export const metadata: Metadata = {
   description: "Mosbahi Firas Portfolio",
 };
 
+console.log(montserrat);
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // className={`${montserrat.className}`}
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <div className="min-h-screen w-screen bg-[#F3F4F6] py-12 px-12 lg:px-16">
+      <body>
+        <div className="bg-[#F3F4F6] py-12 px-12 lg:px-16 xl:max-w-full min-h-screen h-fit lg:max-w-screen-xl md:max-w-screen-lg sm:max-w-screen-md max-w-screen-sm overflow-hidden">
           {children}
         </div>
       </body>

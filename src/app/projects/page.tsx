@@ -6,7 +6,7 @@ import useCustomNavigation from "@portfolio/hooks/useCustomNavigation";
 export default function ProjectsPage() {
   useCustomNavigation("/experience", "/");
   return (
-    <main className="flex lg:flex-row flex-col h-full lg:items-start items-center justify-between">
+    <main className="flex lg:flex-row mx-auto flex-col h-full lg:items-start items-center justify-between">
       <div className="flex flex-col lg:text-start text-center max-w-[400px] gap-6 mt-12">
         <p className="text-[#374151] text-[36px] font-[700]">Projects</p>
         <p className="text-[#6B7280] text-[16px] font-[500]">
