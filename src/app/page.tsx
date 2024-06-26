@@ -25,7 +25,7 @@ export default function HomePage() {
         <a
           href="https://drive.google.com/file/d/1LQBZ00JBvC6saq2kp-_NDhiPj0OFf_YK/view?usp=sharing"
           target="_blank"
-          className="text-black bg-white text-[16px] font-[500] px-16 py-4 border border-transparent rounded-[8px]"
+          className="text-black bg-white text-[16px] font-[500] px-16 py-3 border border-transparent rounded-[8px]"
         >
           Get my CV
         </a>
@@ -33,7 +33,7 @@ export default function HomePage() {
       <motion.div animate={imageAnimation}>
         <Image
           src="/firas.jpeg"
-          className="size-[220px] mt-4 mb-8 border border-transparent rounded-full"
+          className="size-[220px] mt-4 mb-4 border border-transparent rounded-full"
           alt="firas photo"
           height={200}
           width={200}
