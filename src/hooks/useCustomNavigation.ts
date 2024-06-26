@@ -16,7 +16,7 @@ const isTopReached = () => {
 };
 
 export default function useCustomNavigation(prev: string, next: string): void {
-  const [scrollPosition, setScrollPosition] = useState<number>(window.scrollY);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
   const router = useRouter();
   function onWheel(e: any) {
     if (e["deltaY"] > 0 && isEndReached()) {
