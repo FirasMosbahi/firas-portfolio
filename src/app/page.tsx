@@ -33,14 +33,14 @@ export default function HomePage() {
       <motion.div animate={imageAnimation}>
         <Image
           src="/firas.jpeg"
-          className="size-[220px] mt-4 mb-10 border border-transparent rounded-full"
+          className="size-[220px] mt-4 mb-8 border border-transparent rounded-full"
           alt="firas photo"
           height={200}
           width={200}
         />
       </motion.div>
       <motion.div animate={infosAnimation} className="text-center">
-        <p className="text-[#4B5563] text-[32px] font-[700] mb-12">
+        <p className="text-[#4B5563] text-[32px] font-[700] mb-4">
           Mosbahi Firas
         </p>
         <p className="text-[#111827] lg:text-[64px] sm:text-[36px] text-[24px] lg:mb-0 mb-8 font-[500]">
