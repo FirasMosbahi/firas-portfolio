@@ -28,12 +28,12 @@ export default function useCustomNavigation(prev: string, next: string): void {
     }
   }
   function onScroll(e: any) {
-    if (isTopReached() && window.scrollY > scrollPosition) {
-      setScrollPosition(window.scrollY);
-      router.push(prev);
-    }
+    // if (isTopReached() && window.scrollY > scrollPosition) {
+    //   setScrollPosition(window.scrollY);
+    //   router.push(prev);
+    // }
     console.log(e);
-    if (isEndReached() && window.scrollY < scrollPosition) {
+    if (isEndReached()) {
       setScrollPosition(window.scrollY);
       console.log("next");
       router.push(next);
