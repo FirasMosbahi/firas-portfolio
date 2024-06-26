@@ -27,13 +27,13 @@ export default function useCustomNavigation(prev: string, next: string): void {
     }
   }
   function onScroll(e: any) {
+    if (isTopReached()) {
+      router.push(prev);
+    }
     console.log(e);
     if (isEndReached()) {
       console.log("next");
       router.push(next);
-    }
-    if (isTopReached()) {
-      router.push(prev);
     }
   }
   function onKeyPress(e: any) {
