@@ -16,7 +16,7 @@ const isTopReached = () => {
 };
 
 export default function useCustomNavigation(prev: string, next: string): void {
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const router = useRouter();
   function onWheel(e: any) {
     if (e["deltaY"] > 0 && isEndReached()) {
@@ -28,15 +28,15 @@ export default function useCustomNavigation(prev: string, next: string): void {
     }
   }
   function onScroll(e: any) {
-    // if (isTopReached() && window.scrollY > scrollPosition) {
-    //   setScrollPosition(window.scrollY);
-    //   router.push(prev);
-    // }
-    console.log(e);
-    if (isEndReached()) {
-      setScrollPosition(window.scrollY);
+    if (isTopReached() && isScrolled) {
+      setIsScrolled(false);
+      router.push(prev);
+    } else if (isEndReached()) {
+      setIsScrolled(true);
       console.log("next");
       router.push(next);
+    } else {
+      setIsScrolled(true);
     }
   }
   function onKeyPress(e: any) {
